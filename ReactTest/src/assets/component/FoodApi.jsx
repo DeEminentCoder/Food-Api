@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 
 const FoodApi = () => {
-  let foodArray = [{}];
+  // let foodArray = [{}];
   const [foods, setfoods] = useState([]);
   const [me, setMe] = useState("");
   let endpoint = `https://www.themealdb.com/api/json/v1/1/search.php?s=${me}`;
@@ -11,7 +11,7 @@ const FoodApi = () => {
       .get(endpoint)
       .then((response) => {
         setfoods(response.data.meals);
-        // console.log(foods);
+        console.log(foods);
       })
       .catch((err) => {});
   };
@@ -31,7 +31,8 @@ const FoodApi = () => {
         </button>
 
         {foods.map((endpoint, index) => (
-          <div key={index} className="card my-2 border" style={{ width: "18rem" }}>
+          <div className="row m-5 p-5 container">
+          <div key={index} className="card my-2 border col p-5 m-5" style={{ width: "30rem" }}>
             <img
               src={endpoint.strMealThumb}
               className="card-img-top"
@@ -42,10 +43,11 @@ const FoodApi = () => {
               <p className="card-text">
                {endpoint.strInstructions}
               </p>
-              <a href="#" className="btn btn-primary">
-                Go somewhere
+              <a href="#{endpoint.strYoutube}" className="btn btn-primary">
+              Watch Tutorial video
               </a>
             </div>
+          </div>
           </div>
         ))}
       </center>
