@@ -24,7 +24,7 @@ const FoodApi = () => {
           onChange={(e) => setMe(e.target.value)}
           className="form-control p-2 display fs-3 mb-2"
         >
-            {/* <label htmlFor=""></label> */}
+            <label htmlFor=""></label>
         </input>
         <button onClick={getData} className="btn btn-dark form-control fs-2">
           Get Food
