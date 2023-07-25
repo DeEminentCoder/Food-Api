@@ -19,7 +19,7 @@ const FoodApi = () => {
     <>
       <center className="p-2">
         <input
-          placeholder="Which food are you looking for?"
+          placeholder="Which food are you looking for???"
           type="text"
           onChange={(e) => setMe(e.target.value)}
           className="form-control p-2 display fs-3 mb-2"
